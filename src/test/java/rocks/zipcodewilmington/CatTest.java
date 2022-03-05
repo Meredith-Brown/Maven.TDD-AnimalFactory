@@ -10,9 +10,9 @@ import java.util.Date;
  * @author leon on 4/19/18.
  */
 public class CatTest {
-    // TODO - Create tests for `void setName(String name)`
-    // TODO - Create tests for `speak`
-    // TODO - Create tests for `setBirthDate(Date birthDate)`
+    // DONE - Create tests for `void setName(String name)`
+    // DONE - Create tests for `speak`
+    // DONE - Create tests for `setBirthDate(Date birthDate)`
     // TODO - Create tests for `void eat(Food food)`
     // TODO - Create tests for `Integer getId()`
     // TODO - Create test to check Animal inheritance; google search `java instanceof keyword`
@@ -40,4 +40,44 @@ public class CatTest {
         Assert.assertEquals(givenId, retrievedId);
     }
 
+    @Test
+    public void testSetName() {
+        // Given
+        String expectedName = "Naomi";
+        Date expectedBirthDate = new Date();
+        Integer expectedID = 9;
+        Cat cat = new Cat(expectedName, expectedBirthDate, expectedID);
+        // When
+        cat.setName(expectedName);
+        // Then
+        String actualName = cat.getName();
+        Assert.assertEquals(expectedName, actualName);
+    }
+
+    @Test
+    public void testSpeak() {
+        // Given
+        String expectedName = "Naomi";
+        Date expectedBirthDate = new Date();
+        Integer expectedID = 9;
+        String expected = "meow!";
+        // When
+        String actual = new Cat(expectedName, expectedBirthDate, expectedID).speak(); // https://stackoverflow.com/questions/17004003/how-do-i-call-a-non-static-method-from-a-main-method
+        // Then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testSetBirthDate() {
+        // Given
+        String expectedName = "NiNi";
+        Date expectedBirthDate = new Date();
+        Integer expectedID = 22021;
+        Cat cat = new Cat(expectedName, expectedBirthDate, expectedID);
+        // When
+        cat.setBirthDate(expectedBirthDate);
+        // Then
+        Date actualBirthDate = cat.getBirthDate();
+        Assert.assertEquals(expectedBirthDate, actualBirthDate);
+    }
 }
