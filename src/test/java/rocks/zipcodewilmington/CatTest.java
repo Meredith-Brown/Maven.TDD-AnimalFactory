@@ -13,7 +13,7 @@ public class CatTest {
     // DONE - Create tests for `void setName(String name)`
     // DONE - Create tests for `speak`
     // DONE - Create tests for `setBirthDate(Date birthDate)`
-    // TODO - Create tests for `void eat(Food food)`
+    // TODO - Create tests for `void eat(Food food)` --- Mer note: (Mammal and Animal Classes - ?add food to eaten meals array?)
     // TODO - Create tests for `Integer getId()`
     // TODO - Create test to check Animal inheritance; google search `java instanceof keyword`
     // TODO - Create test to check Mammal inheritance; google search `java instanceof keyword`
@@ -79,5 +79,16 @@ public class CatTest {
         // Then
         Date actualBirthDate = cat.getBirthDate();
         Assert.assertEquals(expectedBirthDate, actualBirthDate);
+    }
+
+    @Test
+    public void testEat() {
+        // Given
+        // food = newfood
+        // cat == newcat
+        // When
+        // cat.eat(expectedFood);
+        // Then
+        // Assert.assertEquals(expectedFood, eatenMeals[eatenMeals.length]);
     }
 }
