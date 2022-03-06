@@ -2,8 +2,11 @@ package rocks.zipcodewilmington;
 
 import org.junit.Assert;
 import org.junit.Test;
+import rocks.zipcodewilmington.animals.Animal;
 import rocks.zipcodewilmington.animals.Cat;
+import rocks.zipcodewilmington.animals.Mammal;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -13,8 +16,8 @@ public class CatTest {
     // DONE - Create tests for `void setName(String name)`
     // DONE - Create tests for `speak`
     // DONE - Create tests for `setBirthDate(Date birthDate)`
-    // TODO - Create tests for `void eat(Food food)` --- Mer note: (Mammal and Animal Classes - ?add food to eaten meals array?)
-    // TODO - Create tests for `Integer getId()`
+    // DONE - Create tests for `void eat(Food food)` --- Mer note: (Mammal and Animal Classes - ?add food to eaten meals array?)
+    // DONE - Create tests for `Integer getId()`
     // TODO - Create test to check Animal inheritance; google search `java instanceof keyword`
     // TODO - Create test to check Mammal inheritance; google search `java instanceof keyword`
 
@@ -84,11 +87,28 @@ public class CatTest {
     @Test
     public void testEat() {
         // Given
-        // food = newfood
-        // cat == newcat
+        String expectedName = "Ellie";
+        Date expectedBirthDate = new Date();
+        Integer expectedID = 34;
+        Food food = new Food();
+        Cat cat = new Cat(expectedName, expectedBirthDate, expectedID);
         // When
-        // cat.eat(expectedFood);
+        cat.eat(food);
         // Then
-        // Assert.assertEquals(expectedFood, eatenMeals[eatenMeals.length]);
+        Integer numberOfMealsExpected = 1;
+        Assert.assertEquals(numberOfMealsExpected, cat.getNumberOfMealsEaten()); // can't directly pull from eat method bc there is no "get" and ArrayList<Food> eatenMeals is private
+    }
+
+    @Test
+    public void testGetID() {
+        // Given
+        String expectedName = "Pretty Girl";
+        Date expectedBirthDate = new Date();
+        Integer expectedID = 143;
+        Cat cat = new Cat(expectedName, expectedBirthDate, expectedID);
+        // When
+        Integer actualID = cat.getId();
+        // Then
+        Assert.assertEquals(expectedID, actualID);
     }
 }
