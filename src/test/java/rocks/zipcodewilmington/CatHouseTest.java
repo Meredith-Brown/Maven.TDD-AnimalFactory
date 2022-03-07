@@ -73,6 +73,7 @@ public class CatHouseTest {
     @Test // Create tests for `Integer getNumberOfCats()`
     public void testGetNumberOfCats() {
         // Given
+        catHouse.clear();
         Cat cat1 = new Cat("Naomi", new Date(), 1);
         Cat cat2 = new Cat("Ellie", new Date(), 2);
         Cat cat3 = new Cat("Rosie", new Date(), 3);
